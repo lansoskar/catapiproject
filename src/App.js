@@ -8,13 +8,6 @@ import BasicImageGetter from "./components/BasicImageGetter";
 import Favorites from "./components/Favorites";
 
 function App() {
-  const [images, setImages] = useState([]); // State to store images
-
-  // Function to update images in state
-  const updateImages = (newImages) => {
-    setImages(newImages);
-  };
-
   return (
     <div>
       <div className="d-flex justify-content-center">
@@ -42,12 +35,10 @@ function App() {
         <Paragraph />
       </div>
       <div className="max-width-container">
-        {/*filter skal have adgang til images og at updatere dem */}
-        <Filter images={images} updateImages={updateImages} />
+        <Filter />
       </div>
       <div className="general-image-container">
-        {/*skal kun have adgang til billeder*/}
-        <BasicImageGetter images={images} />
+        <BasicImageGetter />
       </div>
     </div>
   );
